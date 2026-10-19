@@ -1,0 +1,983 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#171717">
+<meta name="description" content="Shop men's wear, kids wear, shirts, jeans, T-shirts and more at Tejal Collection, Raja Ji Ka Kareda. Order directly on WhatsApp.">
+<title>Tejal Collection | Fashion for Everyone</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#faf9f6;
+  --white:#fff;
+  --ink:#191919;
+  --muted:#77736d;
+  --gold:#c49a52;
+  --line:#e9e5dd;
+  --dark:#171717;
+  --green:#25d366;
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);color:var(--ink);
+  line-height:1.6;overflow-x:hidden;
+}
+button,input,select{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.container{width:min(1200px,92%);margin:auto}
+.announcement{
+  background:var(--dark);color:#fff;text-align:center;
+  padding:9px 12px;font-size:11px;letter-spacing:1.1px;
+}
+.announcement span{color:#e5c28b}
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,249,246,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  min-height:78px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
+}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.brand-mark{
+  width:43px;height:43px;border:1px solid var(--gold);
+  border-radius:50%;display:grid;place-items:center;
+  font-family:'Playfair Display',serif;color:var(--gold);
+  font-size:22px;
+}
+.brand-name{font-size:16px;font-weight:700;letter-spacing:1.5px;line-height:1.2}
+.brand-sub{font-size:9px;letter-spacing:2px;color:var(--muted);margin-top:5px}
+.nav-links{display:flex;gap:24px;align-items:center}
+.nav-links a{font-size:12px;font-weight:600;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-actions{display:flex;align-items:center;gap:12px}
+.icon-btn{
+  position:relative;border:1px solid var(--line);background:var(--white);
+  width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+  font-size:19px;
+}
+.cart-count{
+  position:absolute;top:-4px;right:-4px;background:var(--gold);
+  color:#fff;border-radius:50%;min-width:19px;height:19px;
+  font-size:10px;display:grid;place-items:center;
+}
+.menu-btn{display:none}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:13px 20px;border:1px solid var(--ink);
+  background:var(--ink);color:#fff;font-size:12px;font-weight:700;
+  letter-spacing:.3px;transition:all .25s;border-radius:3px;
+}
+.btn:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.btn-outline{background:transparent;color:var(--ink)}
+.btn-outline:hover{color:#fff}
+.hero{padding:28px 0 50px}
+.hero-wrap{
+  position:relative;min-height:510px;overflow:hidden;
+  background:#252321;color:#fff;display:grid;
+  grid-template-columns:1fr 1fr;
+}
+.hero-copy{
+  display:flex;flex-direction:column;justify-content:center;
+  align-items:flex-start;padding:clamp(28px,5vw,72px);
+  position:relative;z-index:2;
+  background:linear-gradient(120deg,#242321 70%,rgba(36,35,33,.85));
+}
+.eyebrow{
+  text-transform:uppercase;letter-spacing:3px;font-size:10px;
+  font-weight:700;color:var(--gold);margin-bottom:20px;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;font-size:clamp(38px,5vw,65px);
+  line-height:1.09;font-weight:500;max-width:520px;
+}
+.hero h1 em{font-style:normal;color:#dfbd85}
+.hero-copy p{font-size:13px;color:#d0ccc5;margin:20px 0 26px;max-width:390px}
+.hero-buttons{display:flex;gap:11px;flex-wrap:wrap}
+.hero .btn-outline{border-color:#aaa;color:#fff}
+.hero-media{position:relative;min-height:380px;overflow:hidden}
+.hero-media img{position:absolute;inset:0;transition:opacity .7s,transform 5s}
+.hero-media img:not(.active){opacity:0}
+.hero-media img.active{opacity:1;transform:scale(1.04)}
+.hero-dots{position:absolute;bottom:20px;right:25px;display:flex;gap:8px;z-index:3}
+.hero-dots button{height:4px;width:22px;border:0;background:#ffffff70}
+.hero-dots button.active{background:var(--gold)}
+.trust-row{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  border:1px solid var(--line);margin-top:20px;background:#fff;
+}
+.trust-item{text-align:center;padding:17px 10px;font-size:11px;font-weight:600}
+.trust-item+.trust-item{border-left:1px solid var(--line)}
+.trust-item span{display:block;color:var(--gold);font-size:19px;margin-bottom:3px}
+.section{padding:65px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:28px}
+.kicker{font-size:10px;letter-spacing:2.5px;color:var(--gold);font-weight:700;text-transform:uppercase}
+.section h2{
+  font-family:'Playfair Display',serif;font-size:clamp(29px,4vw,43px);
+  line-height:1.2;font-weight:500;margin-top:7px;
+}
+.section-intro{font-size:12px;color:var(--muted);max-width:440px;margin-top:10px}
+.categories{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:15px;
+}
+.category{
+  position:relative;overflow:hidden;height:245px;background:#e9e4da;
+  cursor:pointer;text-align:left;border:0;color:#fff;
+}
+.category img{transition:transform .6s}
+.category:hover img{transform:scale(1.06)}
+.category:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.78),transparent 75%);
+}
+.category-text{position:absolute;z-index:1;bottom:17px;left:17px;right:12px}
+.category-text small{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#e6c58e}
+.category-text h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:500}
+.category-text span{font-size:11px}
+.shop-section{background:#fff}
+.filter-bar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:15px;flex-wrap:wrap;margin-bottom:25px;
+}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter-btn{
+  border:1px solid var(--line);background:#fff;padding:9px 14px;
+  font-size:11px;border-radius:30px;transition:.2s;
+}
+.filter-btn.active,.filter-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.search-box{
+  border:1px solid var(--line);background:#fff;padding:10px 13px;
+  display:flex;gap:8px;align-items:center;min-width:210px;
+}
+.search-box input{border:0;outline:none;width:100%;font-size:12px;background:transparent}
+.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 15px}
+.product-card{min-width:0;position:relative}
+.product-image{
+  height:290px;position:relative;overflow:hidden;background:#f0ede7;
+}
+.product-image img{transition:transform .45s}
+.product-card:hover .product-image img{transform:scale(1.045)}
+.product-tag{
+  position:absolute;top:12px;left:12px;background:#fff;
+  padding:5px 9px;font-size:9px;letter-spacing:.7px;text-transform:uppercase;
+}
+.quick-add{
+  position:absolute;bottom:10px;left:10px;right:10px;
+  border:0;background:rgba(255,255,255,.95);padding:11px;
+  font-size:11px;font-weight:700;opacity:0;transform:translateY(7px);
+  transition:.25s;
+}
+.product-card:hover .quick-add{opacity:1;transform:translateY(0)}
+.product-info{padding:13px 2px}
+.product-category{font-size:9px;color:var(--gold);text-transform:uppercase;letter-spacing:1.3px}
+.product-info h3{font-size:14px;margin:3px 0 4px;font-weight:600}
+.product-bottom{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.price{font-size:14px;font-weight:700}
+.price-note{font-size:10px;color:var(--muted)}
+.add-mobile{
+  display:none;border:1px solid var(--line);background:#fff;
+  padding:7px 11px;font-size:11px;
+}
+.empty-state{grid-column:1/-1;text-align:center;padding:50px;color:var(--muted)}
+.banner{
+  background:#eae4da;display:grid;grid-template-columns:1fr 1fr;
+  min-height:350px;overflow:hidden;
+}
+.banner-image{min-height:320px}
+.banner-copy{padding:clamp(25px,5vw,60px);display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.banner-copy h2{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,42px);line-height:1.2;font-weight:500;margin:12px 0}
+.banner-copy p{font-size:12px;color:#615b53;max-width:400px;margin-bottom:22px}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.benefit{padding:23px 18px;border:1px solid var(--line);background:#fff}
+.benefit-icon{font-size:25px;color:var(--gold);margin-bottom:13px}
+.benefit h3{font-size:13px;margin-bottom:6px}
+.benefit p{font-size:11px;color:var(--muted)}
+.contact{
+  background:#242321;color:#fff;padding:55px 0;
+}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:45px;align-items:center}
+.contact h2{font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(30px,4vw,45px);line-height:1.2;margin:12px 0}
+.contact p{color:#ccc7be;font-size:12px;max-width:430px}
+.contact-details{display:grid;gap:14px;margin:24px 0}
+.contact-details a,.contact-details div{display:flex;gap:12px;align-items:center;font-size:13px}
+.contact-details span{color:var(--gold);font-size:18px}
+.contact-actions{display:flex;gap:10px;flex-wrap:wrap}
+.contact .btn-outline{color:#fff;border-color:#777}
+footer{background:#151515;color:#fff;padding:30px 0}
+.footer-top{display:flex;justify-content:space-between;gap:25px;align-items:center;flex-wrap:wrap}
+.footer-copy{font-size:10px;color:#aaa;margin-top:7px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:11px;color:#ddd}
+.footer-links a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid #353535;margin-top:25px;padding-top:18px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:#aaa;font-size:10px}
+.footer-bottom a{color:#e5c28b}
+.floating{
+  position:fixed;right:18px;bottom:20px;z-index:120;
+  display:flex;flex-direction:column;gap:10px;
+}
+.float-btn{
+  display:grid;place-items:center;width:51px;height:51px;border-radius:50%;
+  color:#fff;font-size:22px;box-shadow:0 5px 18px #0002;transition:transform .2s;
+}
+.float-btn:hover{transform:translateY(-3px)}
+.float-wa{background:#25d366}
+.float-call{background:#252525;border:1px solid #777}
+.overlay{
+  position:fixed;inset:0;background:#0007;z-index:200;
+  opacity:0;visibility:hidden;transition:.25s;
+}
+.overlay.show{opacity:1;visibility:visible}
+.cart-panel{
+  position:fixed;z-index:201;right:0;top:0;height:100dvh;
+  width:min(440px,100%);background:#fff;
+  display:flex;flex-direction:column;transform:translateX(105%);
+  transition:transform .3s ease;box-shadow:-10px 0 40px #0001;
+}
+.cart-panel.open{transform:translateX(0)}
+.cart-header{display:flex;justify-content:space-between;align-items:center;padding:22px;border-bottom:1px solid var(--line)}
+.cart-header h2{font-family:'Playfair Display',serif;font-size:26px;font-weight:500}
+.close-btn{border:0;background:#f3f1ed;border-radius:50%;width:36px;height:36px;font-size:21px}
+.cart-items{padding:18px;overflow-y:auto;flex:1}
+.cart-empty{text-align:center;padding:60px 15px;color:var(--muted);font-size:13px}
+.cart-item{display:grid;grid-template-columns:76px 1fr auto;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}
+.cart-item img{height:88px;background:#f1eee8}
+.cart-item h3{font-size:12px;line-height:1.4}
+.cart-item .item-price{font-size:12px;font-weight:700;margin-top:5px}
+.qty{display:flex;align-items:center;gap:10px;margin-top:9px}
+.qty button{width:26px;height:26px;border:1px solid var(--line);background:#fff}
+.qty span{font-size:12px}
+.remove-btn{border:0;background:transparent;color:#a44;font-size:11px}
+.cart-footer{border-top:1px solid var(--line);padding:20px}
+.cart-total{display:flex;justify-content:space-between;font-size:15px;font-weight:700;margin-bottom:14px}
+.cart-footer .btn{width:100%}
+.cart-note{font-size:10px;color:var(--muted);margin-top:10px;text-align:center}
+.toast{
+  position:fixed;z-index:300;bottom:25px;left:50%;transform:translate(-50%,20px);
+  background:#202020;color:#fff;padding:12px 19px;font-size:12px;
+  opacity:0;pointer-events:none;transition:.25s;border-radius:5px;
+  max-width:90%;text-align:center;
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.modal{
+  position:fixed;z-index:210;inset:0;background:#0008;display:none;
+  align-items:center;justify-content:center;padding:18px;
+}
+.modal.show{display:flex}
+.modal-box{background:#fff;width:min(460px,100%);padding:28px;position:relative}
+.modal-box h2{font-family:'Playfair Display',serif;font-size:27px;font-weight:500}
+.modal-box>p{font-size:12px;color:var(--muted);margin:6px 0 20px}
+.form-group{margin-bottom:13px}
+.form-group label{display:block;font-size:11px;font-weight:700;margin-bottom:5px}
+.form-group input,.form-group select,.form-group textarea{
+  width:100%;padding:11px;border:1px solid var(--line);outline:none;background:#fff;font-size:12px;border-radius:2px;
+}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--gold)}
+.form-group textarea{resize:vertical;min-height:70px}
+.modal-submit{width:100%;margin-top:5px}
+.modal-close{position:absolute;right:16px;top:16px}
+body.no-scroll{overflow:hidden}
+@media(max-width:1000px){
+ .nav-links{gap:13px}
+ .nav-links a{font-size:11px}
+ .nav-cta{display:none}
+ .product-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .product-image{height:270px}
+ .categories{grid-template-columns:repeat(3,1fr)}
+ .benefits{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+ .announcement{font-size:9px;letter-spacing:.7px}
+ .nav{min-height:68px}
+ .brand-mark{width:38px;height:38px}
+ .brand-name{font-size:13px}
+ .brand-sub{font-size:8px}
+ .menu-btn{display:grid}
+ .nav-links{
+   display:none;position:absolute;top:100%;left:0;right:0;
+   padding:20px 5%;background:var(--bg);border-bottom:1px solid var(--line);
+   flex-direction:column;align-items:stretch;gap:0;
+ }
+ .nav-links.show{display:flex}
+ .nav-links a{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}
+ .nav-actions{gap:7px}
+ .icon-btn{width:38px;height:38px}
+ .hero{padding-top:14px;padding-bottom:30px}
+ .hero-wrap{grid-template-columns:1fr;min-height:unset}
+ .hero-copy{padding:35px 25px 29px}
+ .hero h1{font-size:clamp(39px,10vw,54px)}
+ .hero-copy p{font-size:12px}
+ .hero-media{min-height:290px;grid-row:1}
+ .hero-dots{bottom:13px;right:17px}
+ .trust-item{font-size:9px;padding:13px 5px}
+ .trust-item span{font-size:16px}
+ .section{padding:45px 0}
+ .section-head{align-items:flex-start;flex-direction:column}
+ .categories{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .category{height:205px}
+ .category-text{left:12px;bottom:13px}
+ .category-text h3{font-size:19px}
+ .filter-bar{align-items:stretch}
+ .filters{flex-wrap:nowrap;overflow-x:auto;padding-bottom:5px}
+ .filter-btn{white-space:nowrap}
+ .search-box{width:100%}
+ .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 11px}
+ .product-image{height:auto;aspect-ratio:3/4}
+ .quick-add{display:none}
+ .add-mobile{display:block}
+ .product-info{padding-top:10px}
+ .product-info h3{font-size:12px}
+ .price{font-size:12px}
+ .price-note{font-size:9px}
+ .product-bottom{align-items:flex-start}
+ .banner{grid-template-columns:1fr}
+ .banner-image{min-height:270px;height:270px}
+ .banner-copy{padding:30px 24px}
+ .benefits{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .benefit{padding:16px 13px}
+ .contact-grid{grid-template-columns:1fr;gap:24px}
+ .contact{padding:42px 0}
+ .footer-links{gap:13px}
+ .floating{right:12px;bottom:14px}
+ .float-btn{width:45px;height:45px;font-size:20px}
+}
+@media(max-width:380px){
+ .brand-name{font-size:11px;letter-spacing:1px}
+ .brand-sub{letter-spacing:1px}
+ .brand-mark{width:34px;height:34px;font-size:18px}
+ .categories{gap:7px}
+ .category{height:175px}
+ .category-text h3{font-size:17px}
+ .benefits{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+</style>
+</head>
+
+<body>
+<div class="announcement">
+  EVERYDAY STYLE, EVERYDAY VALUE &nbsp; <span>✦</span> &nbsp; WELCOME TO TEJAL COLLECTION
+</div>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand" aria-label="Tejal Collection home">
+      <div class="brand-mark">T</div>
+      <div>
+        <div class="brand-name">TEJAL COLLECTION</div>
+        <div class="brand-sub">RAJA JI KA KAREDA</div>
+      </div>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#shop">Shop All</a>
+      <a href="#about">Our Story</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="openCart" aria-label="Open shopping cart">
+        ♧ <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <a class="btn nav-cta" href="#shop">SHOP COLLECTION ↗</a>
+      <button class="icon-btn menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-wrap">
+      <div class="hero-copy">
+        <div class="eyebrow">YOUR STYLE. YOUR STORY.</div>
+        <h1>Style that feels <em>like you.</em></h1>
+        <p>Discover everyday essentials, timeless styles and fresh looks for men and kids. Find your next favourite outfit at Tejal Collection.</p>
+        <div class="hero-buttons">
+          <a href="#shop" class="btn">EXPLORE COLLECTIONS ↗</a>
+          <a href="#categories" class="btn btn-outline">SHOP BY CATEGORY</a>
+        </div>
+      </div>
+      <div class="hero-media" id="heroMedia">
+        <img class="active" src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1000&q=85" alt="Men's contemporary fashion outfit" fetchpriority="high">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1000&q=85" alt="Classic everyday T-shirt collection" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=1000&q=85" alt="Casual denim jeans style" loading="lazy">
+        <div class="hero-dots" id="heroDots">
+          <button class="active" aria-label="Show slide 1"></button>
+          <button aria-label="Show slide 2"></button>
+          <button aria-label="Show slide 3"></button>
+        </div>
+      </div>
+    </div>
+    <div class="trust-row">
+      <div class="trust-item"><span>✦</span>Everyday Fashion</div>
+      <div class="trust-item"><span>◇</span>Men's & Kids' Wear</div>
+      <div class="trust-item"><span>↗</span>Easy WhatsApp Orders</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="categories">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">FIND YOUR FIT</div>
+        <h2>Shop by Category</h2>
+        <p class="section-intro">From daily essentials to weekend favourites, explore styles for every part of your day.</p>
+      </div>
+    </div>
+    <div class="categories">
+      <button class="category" data-category="Men's Wear">
+        <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=600&q=80" alt="Men's wear" loading="lazy">
+        <div class="category-text"><small>Explore the edit</small><h3>Men's Wear</h3><span>Shop now ↗</span></div>
+      </button>
+      <button class="category" data-category="T-Shirts">
+        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=80" alt="Casual T-shirts" loading="lazy">
+        <div class="category-text"><small>Everyday essentials</small><h3>T-Shirts</h3><span>Shop now ↗</span></div>
+      </button>
+      <button class="category" data-category="Shirts">
+        <img src="https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=600&q=80" alt="Men's shirts" loading="lazy">
+        <div class="category-text"><small>Smart & casual</small><h3>Shirts</h3><span>Shop now ↗</span></div>
+      </button>
+      <button class="category" data-category="Jeans">
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=600&q=80" alt="Denim jeans" loading="lazy">
+        <div class="category-text"><small>Made for every day</small><h3>Jeans</h3><span>Shop now ↗</span></div>
+      </button>
+      <button class="category" data-category="Lowers">
+        <img src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=600&q=80" alt="Casual bottoms" loading="lazy">
+        <div class="category-text"><small>Easy comfort</small><h3>Lowers</h3><span>Shop now ↗</span></div>
+      </button>
+      <button class="category" data-category="Kids Wear">
+        <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=600&q=80" alt="Kids fashion" loading="lazy">
+        <div class="category-text"><small>Little looks</small><h3>Kids Wear</h3><span>Shop now ↗</span></div>
+      </button>
+      <button class="category" data-category="Night Suits">
+        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=600&q=80" alt="Comfortable nightwear inspiration" loading="lazy">
+        <div class="category-text"><small>Relax in style</small><h3>Night Suits</h3><span>Shop now ↗</span></div>
+      </button>
+      <button class="category" data-category="Shorts">
+        <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=600&q=80" alt="Casual shorts" loading="lazy">
+        <div class="category-text"><small>Weekend ready</small><h3>Shorts</h3><span>Shop now ↗</span></div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section class="section shop-section" id="shop">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">THE COLLECTION</div>
+        <h2>Find Your New Favourite</h2>
+        <p class="section-intro">Browse the collection and add your picks to the cart. Product prices and availability can be confirmed directly with our store.</p>
+      </div>
+    </div>
+
+    <div class="filter-bar">
+      <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="All">All Products</button>
+        <button class="filter-btn" data-filter="Men's Wear">Men's Wear</button>
+        <button class="filter-btn" data-filter="T-Shirts">T-Shirts</button>
+        <button class="filter-btn" data-filter="Shirts">Shirts</button>
+        <button class="filter-btn" data-filter="Jeans">Jeans</button>
+        <button class="filter-btn" data-filter="Lowers">Lowers</button>
+        <button class="filter-btn" data-filter="Kids Wear">Kids Wear</button>
+        <button class="filter-btn" data-filter="Night Suits">Night Suits</button>
+        <button class="filter-btn" data-filter="Shorts">Shorts</button>
+      </div>
+      <label class="search-box">
+        <span>⌕</span>
+        <input type="search" id="searchInput" placeholder="Search products..." aria-label="Search products">
+      </label>
+    </div>
+
+    <div class="product-grid" id="productGrid" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="banner">
+      <div class="banner-image">
+        <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1000&q=85" alt="Fashion collection inspiration" loading="lazy">
+      </div>
+      <div class="banner-copy">
+        <div class="kicker">A LITTLE ABOUT US</div>
+        <h2>Everyday Style.<br>Made Personal.</h2>
+        <p>Welcome to Tejal Collection, Raja Ji Ka Kareda. Explore clothing for men and kids, from everyday T-shirts and shirts to jeans, lowers, shorts and nightwear. Pick your favourites and connect with us directly to confirm your order.</p>
+        <a href="#contact" class="btn">CONNECT WITH US ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <div class="kicker">THE TEJAL EXPERIENCE</div>
+        <h2>Shopping, Made Simple</h2>
+      </div>
+    </div>
+    <div class="benefits">
+      <div class="benefit"><div class="benefit-icon">✦</div><h3>Styles for Every Day</h3><p>Explore everyday clothing and casual favourites in one place.</p></div>
+      <div class="benefit"><div class="benefit-icon">◇</div><h3>Men's & Kids' Wear</h3><p>Browse clothing options for different ages and occasions.</p></div>
+      <div class="benefit"><div class="benefit-icon">↗</div><h3>Direct WhatsApp Orders</h3><p>Send your selected products to the store in a single message.</p></div>
+      <div class="benefit"><div class="benefit-icon">♡</div><h3>Personal Assistance</h3><p>Ask about sizes, colours, prices and availability before ordering.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <div class="kicker">LET'S CONNECT</div>
+      <h2>Your Next Favourite<br>Look Is Waiting.</h2>
+      <p>Need help with a product, size, colour or availability? Contact Tejal Collection directly and our store can help you with your enquiry.</p>
+      <div class="contact-details">
+        <a href="tel:+919784362923"><span>☎</span><div><strong>Call us</strong><br>+91 97843 62923</div></a>
+        <a href="https://www.instagram.com/tejal_collection_kareda/" target="_blank" rel="noopener noreferrer"><span>◎</span><div><strong>Instagram</strong><br>@tejal_collection_kareda</div></a>
+        <div><span>⌖</span><div><strong>Store location</strong><br>Raja Ji Ka Kareda</div></div>
+      </div>
+      <div class="contact-actions">
+        <a class="btn" href="https://wa.me/919784362923?text=Hello%20Tejal%20Collection%2C%20I%20would%20like%20to%20enquire%20about%20your%20clothing%20collection." target="_blank" rel="noopener noreferrer">WHATSAPP US ↗</a>
+        <a class="btn btn-outline" href="tel:+919784362923">CALL THE STORE</a>
+      </div>
+    </div>
+    <div>
+      <div class="kicker">SHOP WITH CONFIDENCE</div>
+      <h2 style="font-size:30px">Have something in mind?</h2>
+      <p style="margin:15px 0 20px">Tell us what you're looking for. We'll prepare a message for you to send directly to the store.</p>
+      <form id="contactForm">
+        <div class="form-group"><label for="customerName">Your Name *</label><input id="customerName" required placeholder="Enter your name" autocomplete="name"></div>
+        <div class="form-group"><label for="customerPhone">Phone Number *</label><input id="customerPhone" type="tel" required pattern="[0-9 +()-]{10,16}" placeholder="Your contact number" autocomplete="tel"></div>
+        <div class="form-group"><label for="customerInterest">Looking For</label>
+          <select id="customerInterest">
+            <option>Men's Wear</option><option>Kids Wear</option><option>T-Shirts</option>
+            <option>Shirts</option><option>Jeans</option><option>Lowers</option>
+            <option>Night Suits</option><option>Shorts</option><option>Other</option>
+          </select>
+        </div>
+        <div class="form-group"><label for="customerMessage">Message</label><textarea id="customerMessage" placeholder="Size, colour or other requirements"></textarea></div>
+        <button type="submit" class="btn modal-submit">SEND ENQUIRY ON WHATSAPP ↗</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <a href="#home" class="brand">
+        <div class="brand-mark">T</div>
+        <div><div class="brand-name">TEJAL COLLECTION</div><div class="brand-sub">RAJA JI KA KAREDA</div></div>
+      </a>
+      <div class="footer-links">
+        <a href="#home">Home</a><a href="#categories">Categories</a><a href="#shop">Shop</a><a href="#contact">Contact</a>
+        <a href="https://www.instagram.com/tejal_collection_kareda/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Tejal Collection. All rights reserved.</span>
+      <span>Designed with care by <a href="#">Marwar Infotech</a></span>
+    </div>
+  </div>
+</footer>
+
+<div class="floating">
+  <a class="float-btn float-call" href="tel:+919784362923" aria-label="Call Tejal Collection">☎</a>
+  <a class="float-btn float-wa" href="https://wa.me/919784362923?text=Hello%20Tejal%20Collection%2C%20I%20would%20like%20to%20enquire%20about%20your%20collection." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">◉</a>
+</div>
+
+<div class="overlay" id="overlay"></div>
+<aside class="cart-panel" id="cartPanel" aria-label="Shopping cart" aria-hidden="true">
+  <div class="cart-header">
+    <h2>Your Shopping Bag <span id="cartTitleCount">(0)</span></h2>
+    <button class="close-btn" id="closeCart" aria-label="Close cart">×</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer">
+    <div class="cart-total"><span>Estimated Total</span><span id="cartTotal">₹0</span></div>
+    <button class="btn" id="checkoutBtn">ORDER ON WHATSAPP ↗</button>
+    <p class="cart-note">Prices and availability will be confirmed by the store on WhatsApp. No payment is collected on this website.</p>
+  </div>
+</aside>
+
+<div class="modal" id="productModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-box">
+    <button class="close-btn modal-close" id="closeProductModal" aria-label="Close">×</button>
+    <h2 id="modalTitle">Product details</h2>
+    <p>Choose your preferred options. The store will confirm availability and price.</p>
+    <form id="productForm">
+      <input type="hidden" id="selectedProductId">
+      <div class="form-group"><label for="selectedSize">Size *</label>
+        <select id="selectedSize" required>
+          <option value="">Choose size</option><option>XS</option><option>S</option><option>M</option>
+          <option>L</option><option>XL</option><option>XXL</option><option>Free Size</option>
+          <option>Kids Size - confirm on WhatsApp</option><option>Not sure - help me choose</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="selectedColor">Preferred Colour</label><input id="selectedColor" placeholder="e.g. Black, Blue, White"></div>
+      <div class="form-group"><label for="selectedQty">Quantity</label><input id="selectedQty" type="number" min="1" max="50" value="1" required></div>
+      <button type="submit" class="btn modal-submit">ADD TO CART</button>
+    </form>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+"use strict";
+
+/* Store contact: verify this number before publishing. */
+const STORE = {
+  name: "Tejal Collection",
+  location: "Raja Ji Ka Kareda",
+  phone: "919784362923"
+};
+
+/*
+  Example catalogue:
+  Prices are intentionally shown as "Ask for price" because the
+  Instagram screenshot does not provide verified product prices.
+  Replace demo images and product details with actual store inventory.
+*/
+const products = [
+  {id:1,name:"Classic Everyday T-Shirt",category:"T-Shirts",price:null,tag:"EVERYDAY",image:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=650&q=80"},
+  {id:2,name:"Casual Printed Shirt",category:"Shirts",price:null,tag:"CASUAL",image:"https://images.unsplash.com/photo-1598033129183-c4f50c736f10?auto=format&fit=crop&w=650&q=80"},
+  {id:3,name:"Classic Blue Denim Jeans",category:"Jeans",price:null,tag:"DENIM",image:"https://images.unsplash.com/photo-1542272604-787c3835535d?auto=format&fit=crop&w=650&q=80"},
+  {id:4,name:"Smart Casual Outfit",category:"Men's Wear",price:null,tag:"STYLE PICK",image:"https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=650&q=80"},
+  {id:5,name:"Relaxed Casual Bottoms",category:"Lowers",price:null,tag:"COMFORT",image:"https://images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=650&q=80"},
+  {id:6,name:"Kids Everyday Outfit",category:"Kids Wear",price:null,tag:"KIDS",image:"https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=650&q=80"},
+  {id:7,name:"Comfort Nightwear",category:"Night Suits",price:null,tag:"COMFORT",image:"https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=650&q=80"},
+  {id:8,name:"Weekend Casual Shorts",category:"Shorts",price:null,tag:"WEEKEND",image:"https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=650&q=80"},
+  {id:9,name:"Minimal Cotton Tee",category:"T-Shirts",price:null,tag:"ESSENTIAL",image:"https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=650&q=80"},
+  {id:10,name:"Modern Everyday Shirt",category:"Shirts",price:null,tag:"NEW STYLE",image:"https://images.unsplash.com/photo-1603252109303-2751441dd157?auto=format&fit=crop&w=650&q=80"},
+  {id:11,name:"Casual Denim Style",category:"Jeans",price:null,tag:"DENIM",image:"https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=650&q=80"},
+  {id:12,name:"Everyday Men's Look",category:"Men's Wear",price:null,tag:"CASUAL",image:"https://images.unsplash.com/photo-1516257984-b1b4d707412e?auto=format&fit=crop&w=650&q=80"}
+];
+
+let activeFilter = "All";
+let cart = [];
+let selectedProduct = null;
+let heroIndex = 0;
+let heroTimer = null;
+
+const $ = id => document.getElementById(id);
+const money = amount => "₹" + Number(amount).toLocaleString("en-IN");
+
+function escapeHTML(value){
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  })[char]);
+}
+
+function safeImageFallback(img){
+  img.onerror = function(){
+    this.onerror = null;
+    this.src = "https://placehold.co/600x800/f0ede7/777?text=Tejal+Collection";
+  };
+}
+document.querySelectorAll("img").forEach(safeImageFallback);
+
+function renderProducts(){
+  const query = $("searchInput").value.trim().toLowerCase();
+  const visible = products.filter(product =>
+    (activeFilter === "All" || product.category === activeFilter) &&
+    (product.name.toLowerCase().includes(query) ||
+     product.category.toLowerCase().includes(query))
+  );
+
+  $("productGrid").innerHTML = visible.length ? visible.map(product => `
+    <article class="product-card">
+      <div class="product-image">
+        <img src="${escapeHTML(product.image)}" alt="${escapeHTML(product.name)}" loading="lazy">
+        <span class="product-tag">${escapeHTML(product.tag)}</span>
+        <button class="quick-add" data-product="${product.id}">SELECT OPTIONS +</button>
+      </div>
+      <div class="product-info">
+        <div class="product-category">${escapeHTML(product.category)}</div>
+        <h3>${escapeHTML(product.name)}</h3>
+        <div class="product-bottom">
+          <div>
+            <div class="price">Ask for price</div>
+            <div class="price-note">Confirm on WhatsApp</div>
+          </div>
+          <button class="add-mobile" data-product="${product.id}">＋ Add</button>
+        </div>
+      </div>
+    </article>
+  `).join("") : `<div class="empty-state">No matching products found. Try another search.</div>`;
+
+  $("productGrid").querySelectorAll("img").forEach(safeImageFallback);
+}
+
+function setFilter(category){
+  activeFilter = category;
+  document.querySelectorAll(".filter-btn").forEach(button =>
+    button.classList.toggle("active", button.dataset.filter === category)
+  );
+  renderProducts();
+  $("shop").scrollIntoView({behavior:"smooth"});
+}
+
+$("filters").addEventListener("click", event => {
+  const button = event.target.closest("[data-filter]");
+  if(button) setFilter(button.dataset.filter);
+});
+
+$("categories").addEventListener("click", event => {
+  const button = event.target.closest("[data-category]");
+  if(button) setFilter(button.dataset.category);
+});
+
+$("searchInput").addEventListener("input", renderProducts);
+
+$("productGrid").addEventListener("click", event => {
+  const button = event.target.closest("[data-product]");
+  if(!button) return;
+  openProductModal(Number(button.dataset.product));
+});
+
+function openProductModal(productId){
+  selectedProduct = products.find(product => product.id === productId);
+  if(!selectedProduct) return;
+  $("selectedProductId").value = selectedProduct.id;
+  $("modalTitle").textContent = selectedProduct.name;
+  $("selectedSize").value = "";
+  $("selectedColor").value = "";
+  $("selectedQty").value = 1;
+  $("productModal").classList.add("show");
+  document.body.classList.add("no-scroll");
+  $("selectedSize").focus();
+}
+
+function closeProductModal(){
+  $("productModal").classList.remove("show");
+  document.body.classList.remove("no-scroll");
+}
+
+$("closeProductModal").addEventListener("click",closeProductModal);
+$("productModal").addEventListener("click",event=>{
+  if(event.target === $("productModal")) closeProductModal();
+});
+
+$("productForm").addEventListener("submit",event=>{
+  event.preventDefault();
+  const product = products.find(p=>p.id === Number($("selectedProductId").value));
+  if(!product) return;
+
+  const size = $("selectedSize").value;
+  const color = $("selectedColor").value.trim() || "Customer preference";
+  const quantity = Math.min(50,Math.max(1,Number($("selectedQty").value)||1));
+
+  const existing = cart.find(item=>
+    item.id === product.id && item.size === size && item.color === color
+  );
+
+  if(existing) existing.quantity = Math.min(50,existing.quantity+quantity);
+  else cart.push({...product,size,color,quantity});
+
+  closeProductModal();
+  renderCart();
+  showToast("Added to your shopping bag");
+});
+
+function renderCart(){
+  const count = cart.reduce((sum,item)=>sum+item.quantity,0);
+  $("cartCount").textContent = count;
+  $("cartTitleCount").textContent = `(${count})`;
+
+  $("cartItems").innerHTML = cart.length ? cart.map((item,index)=>`
+    <div class="cart-item">
+      <img src="${escapeHTML(item.image)}" alt="${escapeHTML(item.name)}">
+      <div>
+        <h3>${escapeHTML(item.name)}</h3>
+        <div class="item-price">Price: To be confirmed</div>
+        <div style="font-size:10px;color:#777;margin-top:3px">
+          Size: ${escapeHTML(item.size)}<br>Colour: ${escapeHTML(item.color)}
+        </div>
+        <div class="qty">
+          <button data-action="decrease" data-index="${index}" aria-label="Decrease quantity">−</button>
+          <span>${item.quantity}</span>
+          <button data-action="increase" data-index="${index}" aria-label="Increase quantity">+</button>
+        </div>
+      </div>
+      <button class="remove-btn" data-action="remove" data-index="${index}">Remove</button>
+    </div>
+  `).join("") : `<div class="cart-empty"><div style="font-size:35px;margin-bottom:12px">♧</div>Your shopping bag is empty.<br><br>Explore the collection and add your favourites.</div>`;
+
+  /* Actual prices are not provided, so no fake total is displayed. */
+  $("cartTotal").textContent = "To be confirmed";
+  $("checkoutBtn").disabled = cart.length === 0;
+  $("checkoutBtn").style.opacity = cart.length ? "1" : ".5";
+  $("cartItems").querySelectorAll("img").forEach(safeImageFallback);
+}
+
+$("cartItems").addEventListener("click",event=>{
+  const button = event.target.closest("[data-action]");
+  if(!button) return;
+  const index = Number(button.dataset.index);
+  const item = cart[index];
+  if(!item) return;
+
+  if(button.dataset.action==="increase") item.quantity=Math.min(50,item.quantity+1);
+  if(button.dataset.action==="decrease") item.quantity--;
+  if(button.dataset.action==="remove" || item.quantity<=0) cart.splice(index,1);
+
+  renderCart();
+});
+
+function openCart(){
+  $("cartPanel").classList.add("open");
+  $("overlay").classList.add("show");
+  $("cartPanel").setAttribute("aria-hidden","false");
+  document.body.classList.add("no-scroll");
+  $("closeCart").focus();
+}
+function closeCart(){
+  $("cartPanel").classList.remove("open");
+  $("overlay").classList.remove("show");
+  $("cartPanel").setAttribute("aria-hidden","true");
+  document.body.classList.remove("no-scroll");
+}
+$("openCart").addEventListener("click",openCart);
+$("closeCart").addEventListener("click",closeCart);
+$("overlay").addEventListener("click",closeCart);
+
+function buildCartMessage(){
+  let message = `Hello ${STORE.name}! I would like to place an order.\\n\\n`;
+  message += `Customer location/store: ${STORE.location}\\n\\n`;
+  message += "MY SELECTED PRODUCTS\\n";
+  message += "----------------------\\n";
+
+  cart.forEach((item,index)=>{
+    message += `\\n${index+1}. ${item.name}\\n`;
+    message += `Category: ${item.category}\\n`;
+    message += `Quantity: ${item.quantity}\\n`;
+    message += `Size: ${item.size}\\n`;
+    message += `Preferred colour: ${item.color}\\n`;
+    message += `Price: Please confirm\\n`;
+  });
+
+  message += "\\nPlease confirm product availability, final prices and the total amount. Thank you!";
+  return message;
+}
+
+function openWhatsApp(message){
+  const url = `https://wa.me/${STORE.phone}?text=${encodeURIComponent(message)}`;
+  window.open(url,"_blank","noopener,noreferrer");
+}
+
+$("checkoutBtn").addEventListener("click",()=>{
+  if(!cart.length){
+    showToast("Your shopping bag is empty");
+    return;
+  }
+  openWhatsApp(buildCartMessage());
+});
+
+$("contactForm").addEventListener("submit",event=>{
+  event.preventDefault();
+  const name = $("customerName").value.trim();
+  const phone = $("customerPhone").value.trim();
+  const interest = $("customerInterest").value;
+  const message = $("customerMessage").value.trim();
+
+  if(!name || !phone){
+    showToast("Please enter your name and phone number");
+    return;
+  }
+
+  const text =
+`Hello ${STORE.name}!
+
+I would like to enquire about your collection.
+
+Name: ${name}
+My phone: ${phone}
+Interested in: ${interest}
+Message: ${message || "Please share available options."}
+
+Please share product details and prices. Thank you!`;
+
+  openWhatsApp(text);
+});
+
+let toastTimeout;
+function showToast(message){
+  $("toast").textContent = message;
+  $("toast").classList.add("show");
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(()=>$("toast").classList.remove("show"),2400);
+}
+
+/* Mobile navigation */
+$("menuBtn").addEventListener("click",()=>{
+  const isOpen = $("navLinks").classList.toggle("show");
+  $("menuBtn").setAttribute("aria-expanded",String(isOpen));
+  $("menuBtn").textContent = isOpen ? "×" : "☰";
+});
+$("navLinks").querySelectorAll("a").forEach(link=>{
+  link.addEventListener("click",()=>{
+    $("navLinks").classList.remove("show");
+    $("menuBtn").setAttribute("aria-expanded","false");
+    $("menuBtn").textContent="☰";
+  });
+});
+
+/* Hero slider */
+const heroImages = [...$("heroMedia").querySelectorAll("img")];
+const heroDots = [...$("heroDots").querySelectorAll("button")];
+
+function showHeroSlide(index){
+  heroIndex = (index + heroImages.length) % heroImages.length;
+  heroImages.forEach((img,i)=>img.classList.toggle("active",i===heroIndex));
+  heroDots.forEach((dot,i)=>dot.classList.toggle("active",i===heroIndex));
+}
+function startHeroSlider(){
+  clearInterval(heroTimer);
+  if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    heroTimer=setInterval(()=>showHeroSlide(heroIndex+1),5000);
+  }
+}
+heroDots.forEach((dot,index)=>dot.addEventListener("click",()=>{
+  showHeroSlide(index);
+  startHeroSlider();
+}));
+startHeroSlider();
+
+/* Keyboard controls */
+document.addEventListener("keydown",event=>{
+  if(event.key==="Escape"){
+    closeCart();
+    closeProductModal();
+    $("navLinks").classList.remove("show");
+    $("menuBtn").setAttribute("aria-expanded","false");
+    $("menuBtn").textContent="☰";
+  }
+});
+
+$("year").textContent = new Date().getFullYear();
+renderProducts();
+renderCart();
+</script>
+</body>
+</html>
